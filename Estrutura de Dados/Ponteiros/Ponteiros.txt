@@ -1,0 +1,210 @@
+Ex 01 - 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int inteiro = 10;
+    float real = 9.5;
+    char string[] = "carlinhos";
+    int *ptrInt;
+    float *ptrReal;
+    char *ptrChar;
+
+    ptrInt = &inteiro;
+    ptrReal = &real;
+    ptrChar = string;
+
+    printf("\nBEFORE: Int: %d Real: %.1f Char: %s \n", inteiro, real, string);
+
+    *ptrInt = 11;
+    *ptrReal = 9.6;
+    ptrChar = "cavalos";
+
+    printf("AFTER: Int: %d Real: %.1f Char: %s\n\n", *ptrInt, *ptrReal, ptrChar);
+
+    return 0;
+}
+
+Ex 02 -
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int var1 = 3;
+    int var2 = 9;
+
+    printf("var1: %x\n", &var1);
+    printf("var2: %x\n", &var2);
+
+    if(&var1 > &var2){
+        printf("End. Maior: %x", &var1);
+    }else {
+        printf("End. MAior: %x", &var2);
+    }
+
+    return 0;
+}
+
+Ex 03 - 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int var1, var2;
+
+    printf("Informe o valor de var1 e var2: ");
+    scanf("%d %d", &var1, &var2);
+    printf("End. var1: %p / End. var2: %p\n\n", &var1, &var2);
+    
+    if(&var1 > &var2) {
+        printf("Maior End: %p", &var1);
+    } else {
+        printf("Maior End: %p", &var2);
+    }
+
+    return 0;
+}
+
+
+Ex 04 - 
+
+#include<stdio.h>
+
+int a, b;
+
+void soma(int *ptrA) {
+    *ptrA += b; 
+    printf("Valores Atual. A: %d B: %d \n", a, b);
+}
+
+int main() {
+    printf("Informe valores para var a e b: ");
+    scanf("%d %d", &a, &b);
+    
+    int *ptrA = &a;  
+    soma(ptrA);  
+}
+
+
+Ex 05 - 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int m, p1, p2;
+
+int isPrime(int num) {
+    if (num <= 1) return 0;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) return 0;
+    }
+    return 1;
+}
+
+void primo(int m, int *p1, int *p2) {
+    *p1 = m - 1;
+    while (*p1 > 1 && !isPrime(*p1)) {
+        (*p1)--;
+    }
+
+    *p2 = m + 1;
+    while (!isPrime(*p2)) {
+        (*p2)++;
+    }
+}
+
+void chama() {
+    int *ptrP1, *ptrP2;
+    printf("Informe um valor para m: ");
+    scanf("%d", &m);
+
+    primo(m, &p1, &p2);
+
+    printf("Maior número primo menor que m: %d\n", p1);
+    printf("Menor número primo maior que m: %d\n", p2);
+}
+
+int main() {
+    chama();
+    return 0;
+}
+
+
+Ex 06 - 
+
+#include <stdio.h>
+
+void frac(float num, int* inteiro, float* frac) {
+    *inteiro = (int)num;
+    *frac = num - *inteiro;
+}
+
+int main() {
+    float num, parteFracionaria;
+    int parteInteira;
+
+    printf("Digite um numero real: ");
+    scanf("%f", &num);
+
+    frac(num, &parteInteira, &parteFracionaria);
+
+    printf("Parte inteira: %d\n", parteInteira);
+    printf("Parte fracionaria: %.2f\n", parteFracionaria);
+
+    return 0;
+}
+
+Ex 07 - 
+
+#include <stdio.h>
+#define PI 3.14159
+
+void calc_esfera(float R, float *area, float *volume) {
+    *area = 4 * PI * R * R;
+    *volume = (4.0 / 3.0) * PI * R * R * R;
+}
+
+int main() {
+    float raio, area, volume;
+
+    printf("Digite o raio da esfera: ");
+    scanf("%f", &raio);
+
+    calc_esfera(raio, &area, &volume);
+
+    printf("Area da superficie: %.2f\n", area);
+    printf("Volume: %.2f\n", volume);
+
+    return 0;
+}
+
+
+Ex 08 - 
+
+#include <stdio.h>
+
+void converteHora(int total_segundos, int *hora, int *min, int *seg) {
+    *hora = total_segundos / 3600;
+    total_segundos %= 3600;
+    *min = total_segundos / 60;
+    *seg = total_segundos % 60;
+}
+
+int main() {
+    int total_segundos, horas, minutos, segundos;
+
+    printf("Digite a quantidade total de segundos: ");
+    scanf("%d", &total_segundos);
+
+    converteHora(total_segundos, &horas, &minutos, &segundos);
+
+    printf("Tempo convertido: %02d:%02d:%02d\n", horas, minutos, segundos);
+
+    return 0;
+}
+
+
+

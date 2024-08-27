@@ -1,0 +1,67 @@
+Back-End Check List
+
+- conhecimento minimo de Front-end
+
+- Linguagem(Java, C#, Ruby, Go, Rust, Node.js, PHP).
+
+- Frameworks de cada Linguagem.
+
+- Banco de Dados {
+    Relacionais - {
+	PostgreSQL
+	MySQL
+	MariaDB
+	MS Sql Server
+    }
+}
+
+- Menssage Bokers {
+    RabbitMQ
+    Kafka
+    Kineses
+    SQS / SNS
+    Search Engine
+    Elasticsearch
+    Solr
+}
+
+- Estrutura de Dados
+
+- Sistema Operacional
+
+- Arquitetura orientada a Serviços
+
+- Design Patterns
+
+- APIs {
+    Rest
+}
+
+- Autenticação {
+    Oauth
+    Basic Authentication 
+    Token Authentication 
+}
+
+- Cache {
+    Client Side
+    Server Side
+    Memcached
+    Redis 
+} 
+
+- Testes {
+    Unitarios
+    Funcional
+    Integraçao
+}
+
+- Containerization{
+    Docker
+}
+
+- Web Servers {
+    nginx
+    Apache 
+    IIS
+}
