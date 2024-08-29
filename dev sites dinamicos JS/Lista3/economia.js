@@ -9,12 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
         checkForm();
     });
 
+    form.addEventListener('input', () => {
+        if (username.value.trim().length === 0 && 
+            curso.value.trim().length === 0 && 
+            idade.value.trim().length === 0) {
+            return;
+        }
+    });
+
     username.addEventListener('input', checkInputUsername);
     curso.addEventListener('input', checkInputCurso);
     idade.addEventListener('input', checkInputIdade);
 
     function checkInputUsername() {
-        const usernameValue = username.value;
+        const usernameValue = username.value.trim();
         if (usernameValue === "") {
             errorInput(username, "Informe seu nome");
         } else {
@@ -24,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkInputCurso() {
-        const cursoValue = curso.value;
+        const cursoValue = curso.value.trim();
         if (cursoValue === "") {
             errorInput(curso, "Informe um curso válido");
         } else {
@@ -34,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkInputIdade() {
-        const idadeValue = idade.value;
+        const idadeValue = idade.value.trim();
         if (idadeValue === "") {
             errorInput(idade, "Informe sua idade");
         } else {
@@ -48,9 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
         checkInputCurso();
         checkInputIdade();
 
-        const usernameValue = username.value;
-        const cursoValue = curso.value;
-        const idadeValue = idade.value;
+        const usernameValue = username.value.trim();
+        const cursoValue = curso.value.trim();
+        const idadeValue = idade.value.trim();
 
         if (usernameValue === "" || cursoValue === "" || idadeValue === "") {
             alert("PREENCHA TODOS OS CAMPOS PARA REALIZAR O SUBMIT!");
@@ -81,3 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         formItem.className = "form-content error";
     }
 });
+
+
+
