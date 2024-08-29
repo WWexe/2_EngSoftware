@@ -3,15 +3,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        int valor1 = 10;
+        double  valor2 = 20.20;
+        boolean resultado = true;
+        char resposta = 'T';
 
-        System.out.println("Hello");
-
-        System.out.print("What's your name? ");
-        String name = scanner.nextLine();
-
-        System.out.println("Hello " + name + ".");
-
-        scanner.close();
+        System.out.println("int: " + valor1 + "\ndouble: " + valor2 + "\nresultado: " + resultado);
     }
 }
+
+

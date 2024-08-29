@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         textMessage.innerText = message;
         formItem.className = "form-content error";
     }
-
     
 });
 
