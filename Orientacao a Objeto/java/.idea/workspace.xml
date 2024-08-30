@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b3e2c30-0068-4e47-b396-0e39088d9d1a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Desktop.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learn java/src/ex01/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/Learn java/src/ex01/Livro.java" afterDir="false" />
-    </list>
+    <list default="true" id="8b3e2c30-0068-4e47-b396-0e39088d9d1a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,6 +90,7 @@
       <workItem from="1724778120705" duration="6300000" />
       <workItem from="1724784843442" duration="113000" />
       <workItem from="1724785035289" duration="51000" />
+      <workItem from="1724974630364" duration="10000" />
     </task>
     <servers />
   </component>
