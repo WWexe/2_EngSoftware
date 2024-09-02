@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../Repositorios/Learn C"
+		},
+		{
+			"path": "../../../../../Repositorios/Notas"
+		},
+		{
+			"path": "../../../../../Repositorios/Arquitetura de redes"
+		},
+		{
+			"path": "../../../../../Repositorios/CRUD"
+		},
+		{
+			"path": "../../../.."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"string.h": "c"
+		},
+		"liveServer.settings.multiRootWorkspaceName": "Site Cooper Bedin"
+	}
+}
