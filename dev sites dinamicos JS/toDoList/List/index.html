@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+
+    <style>
+      .item {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 0 10px;
+      }
+
+      .dados {
+        display: flex;
+        flex-direction: row;
+      }
+
+      #tarefas {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="registro">
+      <input type="text" name="tarefa" placeholder="Informe a tarefa" />
+      <button type="submit">Salvar</button>
+    </form>
+    <hr />
+    <div id="tarefas"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
