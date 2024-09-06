@@ -2,18 +2,24 @@
 #include <stdlib.h>
 
 int main() {
-    int loteria[6], bilhete[6], *acertos, quantidade_acertos = 0;
+    int loteria[6], bilhete[6], *numeros_acertados, quantidade_acertos = 0;
 
-    printf("Digite os 6 números sorteados pela loteria:\n");
+    printf("Digite os 6 numeros sorteados pela loteria:\n");
     for (int i = 0; i < 6; i++) {
         printf("Número %d: ", i + 1);
-        scanf("%d", &loteria[i]);
+        if (scanf("%d", &loteria[i]) != 1) {
+            printf("Entrada inválida.\n");
+            return 1;
+        }
     }
 
     printf("Digite os 6 numeros do seu bilhete:\n");
     for (int i = 0; i < 6; i++) {
-        printf("Número %d: ", i + 1);
-        scanf("%d", &bilhete[i]);
+        printf("Numero %d: ", i + 1);
+        if (scanf("%d", &bilhete[i]) != 1) {
+            printf("Entrada inválida.\n");
+            return 1;
+        }
     }
 
     for (int i = 0; i < 6; i++) {
@@ -25,9 +31,9 @@ int main() {
         }
     }
 
-    acertos = (int *)malloc(quantidade_acertos * sizeof(int));
+    numeros_acertados = (int *)malloc(quantidade_acertos * sizeof(int));
 
-    if (acertos == NULL) {
+    if (numeros_acertados == NULL) {
         printf("Erro na alocacao de memoria.\n");
         return 1;
     }
@@ -36,7 +42,7 @@ int main() {
     for (int i = 0; i < 6; i++) {
         for (int j = 0; j < 6; j++) {
             if (loteria[i] == bilhete[j]) {
-                acertos[indice++] = loteria[i];
+                numeros_acertados[indice++] = loteria[i];
                 break;
             }
         }
@@ -50,7 +56,7 @@ int main() {
     printf("\nNumeros acertados: ");
     if (quantidade_acertos > 0) {
         for (int i = 0; i < quantidade_acertos; i++) {
-            printf("%d ", acertos[i]);
+            printf("%d ", numeros_acertados[i]);
         }
     } else {
         printf("Nenhum acerto.");
@@ -58,6 +64,7 @@ int main() {
 
     printf("\n");
 
-    free(acertos);
+    free(numeros_acertados);
 
     return 0;
+}
