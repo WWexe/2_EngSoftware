@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        #calculator {
+            display: grid;
+            grid-template-areas:
+                "visor visor visor visor"
+                "btn1 btn2 btn3 btnAdd"
+                "btn4 btn5 btn6 btnSub"
+                "btn7 btn8 btn9 btnMul"
+                "btn0 btnDot btnC btnEq";
+            grid-template-columns: repeat(4, 50px);
+            grid-template-rows: repeat(5, 50px);
+            gap: 10px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #d0d0d0;
+        }
+        .btn:active {
+            background-color: #c0c0c0;
+        }
+        .btn.visor {
+            grid-area: visor;
+            background-color: #fafafa;
+            border: none;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+        #historico {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            max-width: 220px;
+            width: 100%;
+        }
+        #historico p {
+            margin: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+        #historico p:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="calculator">
+            <div class="btn visor">0</div>
+            <div class="btn btn1">1</div>
+            <div class="btn btn2">2</div>
+            <div class="btn btn3">3</div>
+            <div class="btn btn4">4</div>
+            <div class="btn btn5">5</div>
+            <div class="btn btn6">6</div>
+            <div class="btn btn7">7</div>
+            <div class="btn btn8">8</div>
+            <div class="btn btn9">9</div>
+            <div class="btn btn0">0</div>
+            <div class="btn btnDot">.</div>
+            <div class="btn btnAdd">+</div>
+            <div class="btn btnSub">-</div>
+            <div class="btn btnMul">*</div>
+            <div class="btn btnDiv">/</div>
+            <div class="btn btnEq">=</div>
+            <div class="btn btnC">C</div>
+        </div>
+        <div id="historico"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
