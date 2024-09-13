@@ -6,7 +6,7 @@ public class Itens {
     private double preco;
     private String descricao;
 
-    public Itens(Integer id, String nome, String descricao) {
+    public Itens(Integer id, String nome, double preco, String descricao) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
@@ -22,17 +22,5 @@ public class Itens {
                 ", descricao='" + descricao + '\'' +
                 '}';
     }
-    public Integer getId() {
-        return id;
-    }
 
-    public String getNome() {
-        return nome;
-    }
-    public Double getPreco() {
-        return preco;
-    }
-    public String getDescricao() {
-        return descricao;
-    }
 }

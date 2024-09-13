@@ -1,16 +1,18 @@
 package Ex01;
 
+import java.util.List;
+
 public class Pedido {
     private Integer codigo;
     private EnderecoCliente enderecoCliente;
     private Cliente cliente;
-    private Pedido pedido;
+    private List<Itens> itens;
 
-    public Pedido(Integer codigo, EnderecoCliente enderecoCliente, Cliente cliente, Pedido pedido) {
+    public Pedido(Integer codigo, EnderecoCliente enderecoCliente, Cliente cliente, List<Itens> itens) {
         this.codigo = codigo;
         this.enderecoCliente = enderecoCliente;
         this.cliente = cliente;
-        this.pedido = pedido;
+        this.itens = itens;
     }
 
     @Override
@@ -19,23 +21,8 @@ public class Pedido {
                 "codigo=" + codigo +
                 ", enderecoCliente=" + enderecoCliente +
                 ", cliente=" + cliente +
-                ", pedido=" + pedido +
+                ", itens=" + itens +
                 '}';
     }
 
-    public Integer getCodigo() {
-        return codigo;
-    }
-
-    public EnderecoCliente getEnderecoCliente() {
-        return enderecoCliente;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public Pedido getPedido() {
-        return pedido;
-    }
 }
