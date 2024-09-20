@@ -20,23 +20,21 @@ public class Carro {
         this.velocidadeMaxima = velocidadeMaxima;
         this.velocidadeAtual = velocidadeAtual;
     }
-
     @Override
     public String toString() {
         return "Marca: " + marca + ", Modelo: " + modelo + ", Ano: " + ano + ", Cor: " + cor +
                 ", Potência: " + potencia + " CV, Valor: R$" + valor +
                 ", Velocidade Máxima: " + velocidadeMaxima + " km/h, Velocidade Atual: " + velocidadeAtual + " km/h";
     }
-
     public void acelerar() {
         if (velocidadeAtual < velocidadeMaxima) {
             velocidadeAtual += 300;
         }
     }
-
     public void frear() {
         if (velocidadeAtual > 0) {
             velocidadeAtual -= 300;
         }
     }
+
 }

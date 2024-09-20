@@ -24,5 +24,4 @@ public class Pedido {
                 ", itens=" + itens +
                 '}';
     }
-
 }

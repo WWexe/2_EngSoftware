@@ -1,0 +1,191 @@
+	create database ControleLivros;
+	use ControleLivros;
+
+	create table editoras (
+		id_editora int primary key auto_increment,
+		nome varchar(100) not null
+	);
+
+	create table autores (
+		id_autor int primary key auto_increment,
+		nome varchar(100) not null
+	);
+
+	create table categorias (
+		id_categoria int primary key auto_increment,
+		nome varchar(100) not null
+	);
+
+	create table livros (
+		id_livro int primary key auto_increment,
+		titulo varchar(255) not null,
+		id_editora int not null,
+		id_autor int not null,
+		foreign key (id_editora) references editoras(id_editora),
+		foreign key (id_autor) references autores(id_autor)
+	);
+
+	create table livro_categoria (
+		id_livro int,
+		id_categoria int,
+		primary key (id_livro, id_categoria),
+		foreign key (id_livro) references livros(id_livro),
+		foreign key (id_categoria) references categorias(id_categoria)
+	);
+
+	/*-------------------------- EX 02 -------------------------------*/
+
+	create database Industria;
+	use Industria;
+	create table departamentos (
+		numero int primary key,
+		setor varchar(100) not null
+	);
+
+	create table funcionarios (
+		numero int primary key,
+		salario decimal(10, 2) not null,
+		telefone varchar(20) not null,
+		id_departamento int not null,
+		foreign key (id_departamento) references departamentos(numero)
+	);
+
+	create table projetos (
+		numero int primary key,
+		orcamento decimal(15, 2) not null
+	);
+
+	create table fornecedores (
+		numero int primary key,
+		endereco varchar(255) not null
+	);
+
+	create table pecas (
+		numero int primary key,
+		peso decimal(10, 2) not null,
+		cor varchar(50) not null
+	);
+
+	create table depositos (
+		numero int primary key,
+		endereco varchar(255) not null
+	);
+
+	create table deposito_pecas (
+		id_deposito int,
+		id_peca int,
+		primary key (id_deposito, id_peca),
+		foreign key (id_deposito) references depositos(numero),
+		foreign key (id_peca) references pecas(numero)
+	);
+
+	create table projeto_funcionarios (
+		id_projeto int,
+		id_funcionario int,
+		data_inicio date not null,
+		horas_trabalhadas decimal(5, 2) not null,
+		primary key (id_projeto, id_funcionario),
+		foreign key (id_projeto) references projetos(numero),
+		foreign key (id_funcionario) references funcionarios(numero)
+	);
+
+	create table projeto_fornecedores_pecas (
+		id_projeto int,
+		id_fornecedor int,
+		id_peca int,
+		data_inicio date not null,
+		primary key (id_projeto, id_fornecedor, id_peca),
+		foreign key (id_projeto) references projetos(numero),
+		foreign key (id_fornecedor) references fornecedores(numero),
+		foreign key (id_peca) references pecas(numero)
+	);
+
+	/*-------------------------- EX 03 -------------------------------*/
+
+	create database Escola;
+	use Escola;
+	create table professores (
+		id_professor int primary key auto_increment,
+		nome varchar(100) not null
+	);
+
+	create table alunos (
+		id_aluno int primary key auto_increment,
+		nome varchar(100) not null,
+		id_turma int not null,
+		foreign key (id_turma) references turmas(id_turma)
+	);
+
+	create table turmas (
+		id_turma int primary key auto_increment,
+		nome varchar(50) not null
+	);
+
+	create table aula (
+		id_aula int primary key auto_increment,
+		data date not null,
+		id_professor int not null,
+		foreign key (id_professor) references professores(id_professor)
+	);
+
+	create table turma_professor (
+		id_turma int,
+		id_professor int,
+		primary key (id_turma, id_professor),
+		foreign key (id_turma) references turmas(id_turma),
+		foreign key (id_professor) references professores(id_professor)
+	);
+
+	create table aula_aluno (
+		id_aula int,
+		id_aluno int,
+		primary key (id_aula, id_aluno),
+		foreign key (id_aula) references aula(id_aula),
+		foreign key (id_aluno) references alunos(id_aluno)
+	);
+
+	/*------------------------- EX 04 -------------------------------*/
+
+	create database Eleicao;
+	use Eleicao;
+
+	create table cargo (
+		codigo_cargo int primary key,
+		nome_cargo varchar(30) unique not null check (nome_cargo != 'Prefeito' and nome_cargo != 'Vereador'),
+		salario float not null default 17000.00,
+		numero_vagas int unique not null
+	);
+
+	create table partido (
+		codigo_partido int primary key,
+		sigla char(5) unique not null,
+		nome varchar(40) unique not null,
+		numero int unique not null
+	);
+
+	create table candidato (
+		numero_candidato int primary key,
+		nome varchar(40) unique not null,
+		codigo_cargo int not null,
+		codigo_partido int not null,
+		foreign key (codigo_cargo) references cargo(codigo_cargo),
+		foreign key (codigo_partido) references partido(codigo_partido)
+	);
+
+	create table eleitor (
+		titulo_eleitor varchar(30) primary key,
+		zona_eleitoral char(5) not null,
+		sessao_eleitoral char(5) not null,
+		nome varchar(40) not null
+	);
+
+	create table voto (
+		titulo_eleitor varchar(30),
+		numero_candidato int,
+		primary key (titulo_eleitor, numero_candidato),
+		foreign key (titulo_eleitor) references eleitor(titulo_eleitor),
+		foreign key (numero_candidato) references candidato(numero_candidato)
+	);
+
+
+
