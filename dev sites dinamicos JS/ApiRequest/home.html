@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="shortcut icon" href="Images/whiteLogoCooperBedin.ico" type="image/x-icon">
+    <title>Cooperativa Bedin</title>
+</head>
+<body>
+<!-------------------------HEADER-NAVIGATION----------------------------->    
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <h1>PRIME<span> VIDEO</span></h1>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="home.html" class="nav-link">HOME</a></li>
+                    <li class="nav-item"><a href="Economia.html" class="nav-link">MOVIES</a></li>
+                    <li class="nav-item"><a href="Cooperado.html" class="nav-link">SERIES</a></li>
+                    <li class="nav-item"><a href="Cooperado.html" class="nav-link">SPORTS</a></li>
+                    <li class="nav-item"><a href="Gerador.html" class="nav-link">LIVE TV</a></li>
+                    <li class="nav-item"><a href="Sobre.html" class="nav-link">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button><a href="#">Login</a></button>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="images/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="home.html" class="nav-link">HOME</a></li>
+                <li class="nav-item"><a href="Economia.html" class="nav-link">MOVIES</a></li>
+                <li class="nav-item"><a href="Cooperado.html" class="nav-link">SERIES</a></li>
+                <li class="nav-item"><a href="Cooperado.html" class="nav-link">SPORTS</a></li>
+                <li class="nav-item"><a href="Gerador.html" class="nav-link">LIVE TV</a></li>
+                <li class="nav-item"><a href="Sobre.html" class="nav-link">ABOUT US</a></li>
+            </ul>
+            <div class="login-button">
+                <button><a href="#">LOGIN</a></button>
+            </div>
+        </div>
+    </header>
+    <script src="mobileNav.js"></script>
+    <script src="ApiRequest.js"></script>
+<!------------------------------MAIN-CONTENT---------------------------------->
+    <main>
+        <section class="parceiros">
+        <section id="movie-section">
+            <h2>Informações do Filme</h2>
+            <div id="movie-info">
+                <img id="movie-poster" src="" alt="Pôster do Filme" style="display: none;">
+                <h3 id="movie-title"></h3>
+                <p id="movie-year"></p>
+                <p id="movie-plot"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="main-content-footer">
+            <section class="section-footer">
+                <div class="itens-footer1">
+                    <p>Rua Mitugoro Tanaka, 85, Parque Industrial, Toledo/PR, Sala 2</p>
+                </div>
+                <div class="itens-footer">
+                    <p>45 99114-5983</p>
+                </div>
+                <div class="itens-footer">
+                    <p>@cooperativabedin</p>
+                </div>
+                <div class="itens-footer">
+                    <p>contato@cooperbedin.com.br</p>
+                </div>
+            </section>
+            <section class="section-footer">
+                <div class="itens-footer">
+                    <p>COPYRIGHT ©2023, COOPER BEDIN - COOPERATIVA DE ENERGIAS RENOVÁVEIS - TODOS OS DIREITOS RESERVADOS.</p>
+                </div>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

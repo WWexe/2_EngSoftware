@@ -1,14 +1,25 @@
-async function fazendoRequisicao() {
-    const resposta = await fetch("https://api.adviceslip.com/advice", {
-        method: "GET"
-    });
-    
-    const obj = await resposta.json();
+async function fetchMovieData(title, year) {
+    const apiKey = 'e55090d1'; // Sua chave da OMDb API
+    const url = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${apiKey}`;
 
-    const p = document.createElement("p");
-    p.textContent = obj.slip.advice;
-    document.body.append(p);
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.Response === "True") {
+            document.getElementById("movie-title").textContent = data.Title;
+            document.getElementById("movie-year").textContent = data.Year;
+            document.getElementById("movie-plot").textContent = data.Plot;
+            const poster = document.getElementById("movie-poster");
+            poster.src = data.Poster;
+            poster.style.display = "block";
+        } else {
+            alert("Filme não encontrado: " + data.Error);
+        }
+    } catch (error) {
+        console.error("Erro ao buscar dados do filme:", error);
+    }
 }
 
-fazendoRequisicao();
 
+fetchMovieData("Fight Club", "1999");
