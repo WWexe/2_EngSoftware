@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java/0509/0509.iml" filepath="$PROJECT_DIR$/java/0509/0509.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/DiagramaCarro/DiagramaCarro.iml" filepath="$PROJECT_DIR$/java/DiagramaCarro/DiagramaCarro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/Lista 1/Lista 1.iml" filepath="$PROJECT_DIR$/java/Lista 1/Lista 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/Lista 3/Lista 3.iml" filepath="$PROJECT_DIR$/java/Lista 3/Lista 3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Orientacao a Objeto.iml" filepath="$PROJECT_DIR$/.idea/Orientacao a Objeto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/PedidosControle/PedidosControle.iml" filepath="$PROJECT_DIR$/java/PedidosControle/PedidosControle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/Polimorfismo/src/Polimorfismo.iml" filepath="$PROJECT_DIR$/java/Polimorfismo/src/Polimorfismo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/Polimorfismo/Polimorfismo1.iml" filepath="$PROJECT_DIR$/java/Polimorfismo/Polimorfismo1.iml" />
+    </modules>
+  </component>
+</project>
