@@ -1,0 +1,273 @@
+1 - 
+
+select 
+    l.titulo as titulo_livro,
+    e.nome as nome_editora,
+    es.nome as nome_estilo,
+    a.nome as nome_autor
+from 
+    livro l
+join 
+    editora e on l.id_editora = e.id_editora
+join 
+    livro_estilo le on l.id_livro = le.id_livro
+join 
+    estilo es on le.id_estilo = es.id_estilo
+join 
+    livro_autor la on l.id_livro = la.id_livro
+join 
+    autor a on la.id_autor = a.id_autor;
+
+
+2 - 
+
+select 
+    l.titulo as titulo_livro,
+    e.nome as nome_editora
+from 
+    livro l
+join 
+    editora e on l.id_editora = e.id_editora
+where 
+    e.telefone = '12345';
+
+
+3 - 
+
+select 
+    l.titulo as titulo_livro,
+    a.nome as nome_autor
+from 
+    livro l
+join 
+    livro_autor la on l.id_livro = la.id_livro
+join 
+    autor a on la.id_autor = a.id_autor
+where 
+    a.idade = 35;
+
+
+4 - 
+
+select 
+    l.titulo as titulo_livro,
+    a.nome as nome_autor,
+    e.nome as nome_editora
+from 
+    livro l
+join 
+    livro_autor la on l.id_livro = la.id_livro
+join 
+    autor a on la.id_autor = a.id_autor
+join 
+    editora e on l.id_editora = e.id_editora
+where 
+    a.nome = 'Dan Brown';
+
+
+5 - 
+
+select 
+    l.titulo as titulo_livro,
+    a.nome as nome_autor,
+    e.nome as nome_editora
+from 
+    livro l
+join 
+    livro_autor la on l.id_livro = la.id_livro
+join 
+    autor a on la.id_autor = a.id_autor
+join 
+    editora e on l.id_editora = e.id_editora
+where 
+    a.nome = 'Dan Brown'
+    or a.idade = 50;
+
+6 -
+
+select 
+    l.titulo as titulo_livro,
+    a.nome as nome_autor,
+    e.nome as nome_editora
+from 
+    livro l
+join 
+    livro_autor la on l.id_livro = la.id_livro
+join 
+    autor a on la.id_autor = a.id_autor
+join 
+    editora e on l.id_editora = e.id_editora
+where 
+    a.nome = 'Dan Brown'
+    and e.telefone = '12345';
+
+
+7 -
+
+select 
+    l.titulo as titulo_livro,
+    es.nome as nome_estilo
+from 
+    livro l
+join 
+    livro_estilo le on l.id_livro = le.id_livro
+join 
+    estilo es on le.id_estilo = es.id_estilo
+where 
+    es.nome = 'Romance';
+
+8-
+
+select 
+    l.titulo as titulo_livro,
+    es.nome as nome_estilo
+from 
+    livro l
+join 
+    editora e on l.id_editora = e.id_editora
+join 
+    livro_estilo le on l.id_livro = le.id_livro
+join 
+    estilo es on le.id_estilo = es.id_estilo
+where 
+    e.nome = 'Globo';
+
+
+9 -
+
+select 
+    titulo as titulo_livro,
+    valor as valor_livro
+from 
+    livro
+where 
+    valor = (select max(valor) from livro);
+
+
+10 - 
+
+select 
+    titulo as titulo_livro,
+    valor as valor_livro
+from 
+    livro
+where 
+    valor = (select min(valor) from livro);
+
+
+11 - 
+
+select 
+    avg(valor) as media_custo_livros
+from 
+    livro;
+
+
+12 -
+
+select 
+    a.nome as nome_autor,
+    avg(l.valor) as media_custo_livros
+from 
+    autor a
+join 
+    livro_autor la on a.id_autor = la.id_autor
+join 
+    livro l on la.id_livro = l.id_livro
+group by 
+    a.nome;
+
+
+13 -
+
+select 
+    count(*) as numero_de_livros
+from 
+    livro;
+
+
+14 -
+
+select 
+    count(*) as quantidade_livros
+from 
+    livro
+where 
+    id_editora = 2;
+
+
+15 -
+
+select 
+    count(*) as quantidade_livros
+from 
+    livro_estilo
+where 
+    id_estilo = 5;
+
+
+16 -
+
+select 
+    l.titulo as titulo_livro,
+    e.nome as nome_editora
+from 
+    livro l
+join 
+    editora e on l.id_editora = e.id_editora;
+
+
+17 -
+
+select 
+    l.titulo as titulo_livro,
+    e.nome as nome_editora
+from 
+    livro l
+join 
+    editora e on l.id_editora = e.id_editora
+where 
+    e.nome like 'A%';
+
+
+18 -
+
+select 
+    e.nome as nome_editora
+from 
+    editora e
+left join 
+    livro l on e.id_editora = l.id_editora
+where 
+    l.id_livro is null;
+
+
+19 - 
+
+select 
+    e.nome as nome_editora
+from 
+    editora e
+left join 
+    livro l on e.id_editora = l.id_editora
+where 
+    l.id_livro is null;
+
+
+20 -
+
+select 
+    es.nome as nome_estilo
+from 
+    estilo es
+left join 
+    livro_estilo le on es.id_estilo = le.id_estilo
+left join 
+    livro l on le.id_livro = l.id_livro
+where 
+    l.id_livro is null;
+
+
+
+
+
